@@ -8,7 +8,9 @@
     <style>
         #box2{
             width: 400px;
-            height: 180px;
+            /* height: 180px; */
+            height:auto !important;
+            min-height:180px;
             border: 1px solid #cccccc;
             padding: 8px;
         }
@@ -80,6 +82,7 @@
                     span2.innerHTML = text2;
                     record2.appendChild(span2);
                 }
+                search2.value="";
             }
         }
         clear2.onclick = function clearStorage(){
