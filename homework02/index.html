@@ -68,6 +68,7 @@
         var button2 = document.getElementById("button2");
         var record2 = document.getElementById("record2");
         var clear2 = document.getElementById("clear2");
+        var arr = [];
         button2.onclick = function saveStorage(){
             if(!window.localStorage) {
                 alert("浏览器不支持localstorage");
@@ -76,11 +77,17 @@
             else{
                 var time2 = new Date().getTime();
                 var text2 = search2.value;
+                arr.push(time2);
                 if(text2!=""){
                     localStorage.setItem(time2,text2);
                     var span2 = document.createElement("span");
                     span2.innerHTML = text2;
                     record2.appendChild(span2);
+                    if(record2.childNodes.length>10){
+                        localStorage.removeItem(arr[0]);
+                        arr.shift();
+                        record2.removeChild(record2.children[0]);
+                    }
                 }
             }
         }
