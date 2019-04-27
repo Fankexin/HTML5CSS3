@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>刮奖</title>
+    <style>
+        #box{
+            width: 500px;
+            height: 250px;
+            position: relative;
+        }
+        #award{
+            display: inline-block;
+            width: 500px;
+            text-align: center;
+            font-size: 80px;
+            line-height: 250px;
+            font-weight: bold;
+        }
+        #canvas{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <span id="award">谢谢惠顾</span>
+        <canvas id="canvas" width="500" height="250"></canvas>        
+    </div>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    var award = document.getElementById("award");
+    context.fillStyle = 'gray';
+    context.fillRect(0,0,500,250);
+    context.fill();
+    context.globalCompositeOperation = 'destination-out';
+    var a = new Array('一等奖','二等奖','二等奖','三等奖','三等奖','三等奖','谢谢惠顾','谢谢惠顾','谢谢惠顾','谢谢惠顾');
+    var num = Math.floor(Math.random()*10+1)-1;
+    award.innerHTML=a[num];
+    var condition=false;
+    canvas.onmousedown = function(event){
+        var e = event || window.event;
+        condition=true;
+        var x = e.clientX;
+        var y = e.clientY;
+        context.beginPath();
+        context.arc(x, y, 50, 0, Math.PI * 2);
+        context.fill();
+        context.closePath();
+    }
+    document.onmouseup = function(){
+        condition = false;
+        var j=0;
+        var myImageData = context.getImageData(0,0,500,250);
+        for(var i=0;i<myImageData.data.length;i+=4){
+            if(myImageData.data[i]==0){
+                j++;
+            }               
+        }
+        if(j > myImageData.data.length/4*0.85){
+            context.clearRect(0,0,500,250);
+        }
+    }
+    canvas.onmousemove = function(event){
+        var e = event || window.event;
+        if(condition){
+            x = e.clientX;
+            y = e.clientY;
+            context.beginPath();
+            context.arc(x, y, 50, 0, Math.PI * 2);
+            context.fill();
+            context.closePath();
+            var j=0;
+            var myImageData = context.getImageData(0,0,500,250);
+            for(var i=0;i<myImageData.data.length;i+=4){
+                if(myImageData.data[i]==0){
+                    j++;
+                }               
+            }
+            if(j > myImageData.data.length/4*0.85){
+                context.clearRect(0,0,500,250);
+            }
+        }
+    }
+</script>
+</html>
