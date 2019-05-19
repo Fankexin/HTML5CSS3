@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 413px;
+            height: 482px;
+            background: rgb(229,229,229);           
+            padding-left: 3px;
+            padding-top: 3px;
+            position: relative;
+        }
+        #color{
+            width: 410px;
+            height: 477px;
+            background: white;
+        }
+        #month{
+            position: absolute;
+            left: 335px;
+            top: 20px;
+            background: #fd7546;
+            height: 44px;
+            width: 44px;
+            border-radius: 27px;
+            padding-top: 10px;
+            padding-left: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 17px;
+            line-height: 18px;
+        }
+        #img{
+            width: 410px;
+            height: 270px;
+            background: url(zhanqiao.jpg) no-repeat;
+            background-position:center center;
+            background-size: 100% 100%;
+            transition: background-size .5s ease-in-out;
+        }  
+        #box:hover #img{
+            background-size: 110% 110%;
+            transition: background-size .5s ease-in-out;
+        }
+        #black{
+            width: 410px;
+            height: 270px;
+            background: black;
+            opacity: 0;
+            transition: opacity .5s ease-in-out;
+        }
+        #box:hover #black{
+            opacity: 0.5;
+            transition: opacity .5s ease-in-out;
+        }
+        #words{
+            margin-top: -4px;
+            width: 355px;
+            height: 162px;
+            padding-left: 25px;
+            padding-right: 30px;
+            background: white;
+            position: relative;
+            transition: margin-top .5s ease-in-out;
+        }
+        #box:hover #words{
+            margin-top: -124px;
+            transition: margin-top .5s ease-in-out;
+        }
+        #words div:nth-child(1){
+            width: 60px;
+            height: 30px;
+            position: absolute;
+            top: -30px;
+            left: 0;
+            background: #fd7546;
+            font-weight: bold;
+            font-size: 17px;
+            line-height: 30px;
+            text-align: center;
+            color: white;
+        }
+        #words div:nth-child(2){
+            margin: 0;
+            font-size: 25px;
+            font-weight: bold;
+            line-height: 40px;
+            padding-top: 20px;
+            margin-bottom: 10px;
+        }
+        #words div:nth-child(3){
+            line-height: 20px;
+            font-size: 20px;
+            color: #fb7851;
+        }
+        #words div:nth-child(4){
+            color: #fff;
+            font-size: 17px;           
+            line-height: 30px;
+            transition: color .5s ease-in-out;
+        }
+        #box:hover #words div:nth-child(4){
+            color: #939697;           
+            transition: color .5s ease-in-out;
+        }
+        #below{
+            height: 50px;
+            width: 385px;
+            padding-left: 25px;
+            line-height: 50px;           
+            position: absolute;
+            top: 430px;
+            color: rgb(205,205, 205);
+            font-size: 13px;
+        }       
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="color">
+            <div  id="img">
+                <div id="black"></div>
+            </div>
+            <div id="month">&thinsp;15 五月</div>                         
+            <div id="words">
+                <div>照片</div>
+                <div>青岛栈桥</div>
+                <div>国家AAAA级旅游景区</div>
+                <div>
+                    青岛栈桥是青岛海滨风景区的景点之一，是国务院于1982年首批公布的国家级风景名胜区。
+                    青岛栈桥位于游人如织的青岛中山路南端，桥身从海岸探入如弯月般的青岛湾深处。桥身供游人参观并在此停靠旅游船，由此乘船可看海上青岛。
+                </div>
+            </div>
+            <div id="below">10分钟前&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;123 评论</div> 
+        </div>
+    </div>
+</body>
+</html>
