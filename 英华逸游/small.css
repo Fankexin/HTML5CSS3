@@ -9,7 +9,7 @@ body{
     }
     #top{
         height: 108px;
-        width: 100%;
+        width: 750px;
         overflow: hidden;
     }
     .navbar-default{
@@ -151,6 +151,7 @@ body{
     #transport{
         margin-top: 20px;
         height: 200px;
+        width: 750px;
         overflow: hidden;
         background: #fff;
     }
@@ -204,6 +205,7 @@ body{
     #route{
         margin-top: 20px;
         height: 1070px;
+        width: 750px;
         background: #fff;
         overflow: hidden;
     }
@@ -296,6 +298,7 @@ body{
     #visa{
         margin-top: 20px;
         height: 670px;
+        width: 750px;
         background: #fff;
         overflow: hidden;
     }
@@ -447,6 +450,7 @@ body{
     #mission{
         margin-top: 20px;
         height: 1830px;
+        width: 750px;
         background: #fff;
         overflow: hidden;       
     }
